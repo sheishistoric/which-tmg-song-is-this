@@ -14,9 +14,9 @@ access_token_secret = os.environ['access_token_secret']
 
 auth = tweepy.OAuthHandler(cons_key, cons_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
+api = tweepy.API(auth, wait_on_rate_limit=True)
 
-public_tweets = api.home_timeline('tmgbot')[0]
+public_tweets = api.home_timeline('tmgbot')[1]
 lastTweet = public_tweets[0].text
 lastAuthor = public_tweets[0].source
 lastId = public_tweets[0].id

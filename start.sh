@@ -1,4 +1,4 @@
 #!/bin/sh
 pip install --upgrade pip
-pip install tweepy 
-python3 whichtmgsong.py
+pip install tweepy --target deps
+python whichtmgsong.py
